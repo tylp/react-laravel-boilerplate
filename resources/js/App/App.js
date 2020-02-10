@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import {Header} from '../components/Header'
-import {BeegButton} from '../components/BeegButton';
 import Example from '../components/Example'
 
 class App extends Component {
@@ -12,9 +11,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Header />
                     <Switch>
-                        <BeegButton/>
                         <Route exact path='/' component={Example} />
                     </Switch>
                 </div>
