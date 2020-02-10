@@ -11,5 +11,30 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.react('resources/js/app.js', 'public/js')
-   .sass('resources/sass/app.scss', 'public/css');
+mix
+	.react("resources/js/app.js", "public/js")
+	.sass("resources/sass/app.scss", "public/css")
+	.webpackConfig({
+		module: {
+			rules: [
+				{
+					test: /\.tsx?$/,
+					loader: "ts-loader",
+					exclude: /node_modules/
+				}
+			]
+		},
+		resolve: {
+			extensions: ["*", ".js", ".jsx", ".vue", ".ts", ".tsx"]
+		}
+	})
+	.options({
+		hmrOptions: {
+			host: process.env.APP_URL.replace(/(^\w+:|^)\/\//, ''),
+			port: 8080
+		}
+	})
+	.browserSync({
+		proxy: 'localhost:8000',
+		notify: false
+	});
