@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ButtonBeeg = (props: any) => {
+export const BeegButton = (props: any) => {
 
     return(
         <button>

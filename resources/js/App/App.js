@@ -3,9 +3,9 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Header from '../Header/Header'
-import Example from '../Example'
-import {ButtonBeeg} from '../button';
+import {Header} from '../components/Header'
+import {BeegButton} from '../components/BeegButton';
+import Example from '../components/Example'
 
 class App extends Component {
     render () {
@@ -14,7 +14,7 @@ class App extends Component {
                 <div>
                     <Header />
                     <Switch>
-                        <ButtonBeeg/>
+                        <BeegButton/>
                         <Route exact path='/' component={Example} />
                     </Switch>
                 </div>
