@@ -7,6 +7,8 @@ import InputBase from '@material-ui/core/InputBase';
 import { createStyles, fade, Theme, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import {ThemeSwitch} from '../components/ThemeSwitch'
+
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -80,7 +82,9 @@ export const Header = () => {
                     </IconButton>
                     <Typography className={classes.title} variant="h6" noWrap>
                         Material-UI
-          </Typography>
+                    </Typography>
+                    <ThemeSwitch/>
+
                     <div className={classes.search}>
                         <div className={classes.searchIcon}>
                             <SearchIcon />
